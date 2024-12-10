@@ -5,8 +5,8 @@ permalink: /snake/
 order: 3
 ---
 
- <canvas id="snake" width="1000" height="600"/>
-<script src="snake.js"></script>        
+<canvas id="game" width="600" height="600"/>
+<script src="{{ site.baseurl }}/assets/js/snake.js"></script>
 <style>
     body{
         margin: 0px
