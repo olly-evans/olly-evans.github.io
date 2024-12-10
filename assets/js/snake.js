@@ -1,28 +1,30 @@
 const canvas=document.getElementById('game'); const ctx=canvas.getContext('2d');
 
 // Displaying snake variables.
-let tileCount=30;
-let tileSize=27.5;
-let headX=Math.floor(Math.random()*tileCount);
-let headY=Math.floor(Math.random()*tileCount);
+let tileWidth=30;
+let tileSize=18/20*tileWidth;
+let horTiles=canvas.width/tileWidth
 
+// Head of the snake coords.
+let headX=Math.floor(Math.random()*horTiles);
+let headY=Math.floor(Math.random()*horTiles);
 
 //initialise the speed of snake
 let xvelocity=0;
 let yvelocity=0;
 
 //draw apple
-let appleX=Math.floor(Math.random()*tileCount); // Number <1 * tileCount is then rounded.
-let appleY=Math.floor(Math.random()*tileCount);
+let appleX=Math.floor(Math.random()*horTiles); // Number <1 * tileCount is then rounded.
+let appleY=Math.floor(Math.random()*horTiles);
 
 while (headX==appleX && headY==appleY) {
-    appleX=Math.floor(Math.random()*tileCount); // Number <1 * tileCount is then rounded.
-    appleY=Math.floor(Math.random()*tileCount);
+    appleX=Math.floor(Math.random()*horTiles); // Number <1 * tileCount is then rounded.
+    appleY=Math.floor(Math.random()*horTiles);
 }
 
 // array for snake parts.
 const snakeParts=[];
-let tailLength=1;
+let tailLength=2;
 
 function drawGame() {
 
@@ -43,14 +45,14 @@ ctx.fillRect(0,0,canvas.clientWidth,canvas.clientHeight); // black color start f
 
 function drawSnake() {
     ctx.fillStyle="orange";
-    ctx.fillRect(headX* tileCount,headY* tileCount, tileSize, tileSize);
+    ctx.fillRect(headX* tileWidth,headY* tileWidth, tileSize, tileSize);
 
     ctx.fillStyle="green";
     //loop through our snakeparts array
     for(let i=0;i<snakeParts.length;i++) {
         //draw snake parts
         let part=snakeParts[i]
-         ctx.fillRect(part.x *tileCount, part.y *tileCount, tileSize,tileSize)
+         ctx.fillRect(part.x *tileWidth, part.y *tileWidth, tileSize,tileSize)
     }
     snakeParts.push(new snakePart(headX,headY)); //put item at the end of list next to the head
 }
@@ -59,8 +61,9 @@ function changeSnakePosition() {
     headX=headX+xvelocity;
     headY=headY+yvelocity;
 
-    if (headX>tileCount) {
-        headX = 0;
+    if (headX>horTiles) {
+        headX=0;
+        xvelocity=1;
     }
 }
 
@@ -100,13 +103,13 @@ function keyDown(event) {
 
 function drawApple() {
     ctx.fillStyle="red"; // make apple red
-    ctx.fillRect(appleX*tileCount, appleY*tileCount, tileSize, tileSize)//position apple within tile count
+    ctx.fillRect(appleX*tileWidth, appleY*tileWidth, tileSize, tileSize)//position apple within tile count
 }
 
 function checkCollision() {
     if (headX == appleX && headY == appleY) {
-        appleX=Math.floor(Math.random()*tileCount);
-        appleY=Math.floor(Math.random()*tileCount);
+        appleX=Math.floor(Math.random()*horTiles);
+        appleY=Math.floor(Math.random()*horTiles);
         tailLength++;
     }
 }
@@ -119,5 +122,6 @@ class snakePart {
 }
 
 //add event listener to our body
+console.log(`Head: (${headX}, ${headY}), Apple: (${appleX}, ${appleY}), horTiles: (${horTiles})`);
 document.body.addEventListener('keydown', keyDown);
 drawGame();
