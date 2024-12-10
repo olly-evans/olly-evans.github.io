@@ -58,13 +58,28 @@ function drawSnake() {
 }
 
 function changeSnakePosition() {
+    // Move forward.
     headX=headX+xvelocity;
     headY=headY+yvelocity;
 
+    // Make snake wrap around.
+    // Greater than width.
     if (headX>horTiles) {
         headX=0;
-        xvelocity=1;
     }
+    // Less than width
+    if (headX<0) {
+        headX=horTiles;
+    }
+    // Greater than height.
+    if (headY>horTiles) {
+        headY=0;
+    }
+    // Less than height.
+    if (headY<0) {
+        headY=horTiles;
+    }
+
 }
 
 function keyDown(event) {
