@@ -1,13 +1,13 @@
 const canvas=document.getElementById('game'); const ctx=canvas.getContext('2d');
 
 // Displaying snake variables.
-let tileCount=20;
-let tileSize=18;
+let tileCount=30;
+let tileSize=27.5;
 let headX=Math.floor(Math.random()*tileCount);
 let headY=Math.floor(Math.random()*tileCount);
 
 
-//initialize the speed of snake
+//initialise the speed of snake
 let xvelocity=0;
 let yvelocity=0;
 
@@ -46,30 +46,31 @@ function drawSnake() {
     ctx.fillRect(headX* tileCount,headY* tileCount, tileSize, tileSize);
 
     ctx.fillStyle="green";
-
     //loop through our snakeparts array
     for(let i=0;i<snakeParts.length;i++) {
         //draw snake parts
         let part=snakeParts[i]
          ctx.fillRect(part.x *tileCount, part.y *tileCount, tileSize,tileSize)
     }
-    snakeParts.push(new snakePart(headX,headY));//put item at the end of list next to the head
+    snakeParts.push(new snakePart(headX,headY)); //put item at the end of list next to the head
 }
 
 function changeSnakePosition() {
     headX=headX+xvelocity;
     headY=headY+yvelocity;
+
+    if (headX>tileCount) {
+        headX = 0;
+    }
 }
 
 function keyDown(event) {
     if(event.keyCode==38) {
-
         if(yvelocity==1) {
             return;  //prevent snake from moving in opposite direction
         }
         yvelocity=-1;
         xvelocity=0;
-
     }
     //down
     if(event.keyCode==40) {
@@ -79,7 +80,6 @@ function keyDown(event) {
         yvelocity=1;
         xvelocity=0;
     }
-
     //left
     if(event.keyCode==37) {
         if(xvelocity==1) {
