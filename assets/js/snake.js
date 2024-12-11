@@ -2,7 +2,7 @@ const canvas=document.getElementById('game'); const ctx=canvas.getContext('2d');
 
 // Displaying snake variables.
 let tileWidth=30;
-let tileSize=18/20*tileWidth;
+let tileSize=Math.floor(18/20*tileWidth);
 let horTiles=canvas.width/tileWidth
 
 // Head of the snake coords.
@@ -118,7 +118,8 @@ function keyDown(event) {
 
 function drawApple() {
     ctx.fillStyle="red"; // make apple red
-    ctx.fillRect(appleX*tileWidth, appleY*tileWidth, tileSize, tileSize)//position apple within tile count
+    ctx.fillRect(appleX*tileWidth, appleY*tileWidth, tileSize, tileSize) // position apple within tile count.
+    // Apple CANNOT be drawn where there is a snakepart.
 }
 
 function checkCollision() {
