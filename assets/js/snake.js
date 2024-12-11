@@ -24,23 +24,29 @@ while (headX==appleX && headY==appleY) {
 
 // array for snake parts.
 const snakeParts=[];
-let tailLength=2;
+let tailLength=1;
 
 function drawGame() {
 
-    let speed=7;//The interval will be seven times a second.
-    setTimeout(drawGame, 1000/speed);//update screen 7 times a second
+    let speed=10;//The interval will be seven times a second.
+    // setTimeout(drawGame, 1000/speed);//update screen 7 times a second
     
+    // clearScreen();
+    // drawSnake();
+    // changeSnakePosition();
+    // checkCollision();
+    // drawApple();
+    changeSnakePosition();
     clearScreen();
     drawSnake();
-    changeSnakePosition();
     checkCollision();
     drawApple();
+    setTimeout(drawGame, 1000/speed);//update screen 7 times a second
 }
 
 function clearScreen() {
-ctx.fillStyle= 'black'; // make screen black
-ctx.fillRect(0,0,canvas.clientWidth,canvas.clientHeight); // black color start from 0px left, right to canvas width and canvas height
+    ctx.fillStyle= 'black'; // make screen black
+    ctx.fillRect(0,0,canvas.clientWidth,canvas.clientHeight); // black color start from 0px left, right to canvas width and canvas height
 }
 
 function drawSnake() {
@@ -52,9 +58,16 @@ function drawSnake() {
     for(let i=0;i<snakeParts.length;i++) {
         //draw snake parts
         let part=snakeParts[i]
-         ctx.fillRect(part.x *tileWidth, part.y *tileWidth, tileSize,tileSize)
+        ctx.fillRect(part.x *tileWidth, part.y *tileWidth, tileSize,tileSize)
+        console.log(`i: ${i}`)
+        console.log(`snakeParts.length ${snakeParts.length}`)
     }
     snakeParts.push(new snakePart(headX,headY)); //put item at the end of list next to the head
+
+    // Check if snakeParts greater than the tail length.
+    if (snakeParts.length>tailLength) {
+        snakeParts.shift()
+    }
 }
 
 function changeSnakePosition() {
@@ -80,6 +93,11 @@ function changeSnakePosition() {
         headY=horTiles;
     }
 
+    if (snakeParts.length>tailLength) {
+        snakeParts.pop()
+    }
+
+    
 }
 
 function keyDown(event) {
@@ -127,6 +145,7 @@ function checkCollision() {
         appleX=Math.floor(Math.random()*horTiles);
         appleY=Math.floor(Math.random()*horTiles);
         tailLength++;
+        console.log(`tailLength: ${tailLength}`);
     }
 }
 
