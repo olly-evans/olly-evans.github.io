@@ -4,7 +4,7 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-> Massive fucking dub this tip shit.
+> "We are what we repeatedly do. Excellence, then, is not an act, but a habit."
 {: .prompt-tip }
 
-My name is Olly Evans, I'm a passionate and enthusiastic Electronic Engineer passionate about low-level computing.
+Hello! My name is Olly Evans, I'm a third year Electronic Engineering student. This is where I blog about artificial intelligence, develop this site using Jekyll and implement new features.
