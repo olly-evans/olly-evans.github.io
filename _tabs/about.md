@@ -7,4 +7,6 @@ order: 4
 > "We are what we repeatedly do. Excellence, then, is not an act, but a habit."
 {: .prompt-tip }
 
-Hello! My name is Olly Evans, I'm a third year Electronic Engineering student. This is where I blog about artificial intelligence, develop this site using Jekyll and implement new features.
+Hello, my name is Olly Evans. I am currently in my third year of studying Electronic Engineering, with a strong focus on the intersection of technology, media, and innovation. Alongside my academic pursuits, I have developed a keen interest in video editing and digital content creation, which allows me to apply both my technical knowledge and creative skills.
+
+This website serves as a platform where I document and share my insights on a variety of subjects including football, video editing, and advancements in artificial intelligence. Through my blog posts, I aim to provide thoughtful analysis, practical advice, and engaging discussions relevant to both hobbyists and professionals alike on football, editing and AI topics.

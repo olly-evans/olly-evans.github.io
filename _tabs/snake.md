@@ -1,5 +1,6 @@
 ---
 title: "Snake"
+icon: fas fa-dragon
 layout: page
 permalink: /snake/
 order: 3
@@ -17,6 +18,6 @@ order: 3
         align-items: center;
     }
     canvas{
-    box-shadow: black 20px 10px 50px; /*elevate our canvas and add shadow*/
+        box-shadow: black 20px 10px 50px; /*elevate our canvas and add shadow*/
 }
 </style>

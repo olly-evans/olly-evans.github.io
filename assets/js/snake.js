@@ -3,7 +3,7 @@ const canvas=document.getElementById('game'); const ctx=canvas.getContext('2d');
 // Displaying snake variables.
 let tileWidth=30;
 let tileSize=Math.floor(18/20*tileWidth);
-let horTiles=canvas.width/tileWidth
+let horTiles=canvas.width/tileWidth;
 
 // Head of the snake coords.
 let headX=Math.floor(Math.random()*horTiles);
