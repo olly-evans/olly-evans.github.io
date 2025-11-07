@@ -7,7 +7,7 @@ order: 4
 > "We are what we repeatedly do. Excellence, then, is not an act, but a habit."
 {: .prompt-tip }
 
-Hello, my name is Olly, I am currently in my third year of studying Electronic Engineering, with a strong focus on the intersection of technology, media, and innovation. Alongside my academic pursuits, I have developed a keen interest in video editing and digital content creation, which allows me to apply both my technical knowledge and creative skills.
+Hello, my name is Olly, I am an Electronic Engineering graduate from the University of Warwick, with a strong focus on the intersection of technology, media, and innovation. Alongside my academic pursuits, I have developed a keen interest in video editing and digital content creation, which allows me to apply both my technical knowledge and creative skills.
 
 This website serves as a platform where I document and share my insights on a variety of subjects including football, video editing, and my personal programming projects. 
 
