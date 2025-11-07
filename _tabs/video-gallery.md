@@ -31,6 +31,19 @@ A summary of editing work I've done for other people and myself.
   </video>
 </div>
 
+## FIAGO & George Scaife
+
+<div class="video-gallery">
+  <video controls>
+    <source src="/assets/vids/FIAGO1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <video controls>
+    <source src="/assets/vids/georgescaife1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
 ## Personal Youtube Channel - [Channel Link](https://www.youtube.com/@Oliver_Evans9)
 
 
