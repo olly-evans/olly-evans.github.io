@@ -22,31 +22,16 @@ A summary of editing work I've done for other people and myself.
 ## Stats Perform  - <a href="https://www.statsperform.com/opta-content-agency/" target="_blank">Site</a> 
 
 <div class="video-gallery">
-  <!-- <video controls>
-    <source src="/assets/vids/111225_EN_SPN_UCL_LIVERPOOL_SALAH_SOCIAL6.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video> -->
   <video controls>
     <source src="/assets/vids/Kylian Mbappe hasn't mentioned Cristiano Ronaldo's calendar year goal record to Xabi.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   <video controls>
-    <source src="/assets/vids/Stokes wants England to show FIGHT ahead of must-win Test.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</div>
-
-<div class="video-gallery">
-  <video controls>
     <source src="/assets/vids/Is Trafford set for Manchester City exit.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   <video controls>
-    <source src="/assets/vids/Mbappe misses training ahead of Copa del Rey clash.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <video controls>
-    <source src="/assets/vids/120925_EN_SPN_UCL_REALMADRID_ALONSO_SOCIAL (2).mp4" type="video/mp4">
+    <source src="/assets/vids/Stokes wants England to show FIGHT ahead of must-win Test.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
