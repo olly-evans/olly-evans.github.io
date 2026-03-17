@@ -1,6 +1,6 @@
 ---
 title: Poem I wrote in my sparetime.
-date: 2026-03-17 13:05:00 -500
+date: 2026-03-17 13:05:00
 categories: [poetry]
 tags: [poem, rain] # Tag names always lowercase.
 permalink: /tearsinrain/
