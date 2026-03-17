@@ -21,5 +21,5 @@ it shall end soon rather; once its all fixed.
 Flung into ferocious wind, blustering \
 to strike the teddies; invoke the wailing.
 
-Snow and hail too kindles the bones,   \ 
+Snow and hail too kindles the bones, \ 
 the gambler's wager is endlessly owed.
