@@ -1,5 +1,5 @@
 ---
-title: Tears in Rain - An original poem.
+title: Poem I wrote in my sparetime.
 date: 2026-03-17 13:05:00 -500
 categories: [poetry]
 tags: [poem, rain] # Tag names always lowercase.
