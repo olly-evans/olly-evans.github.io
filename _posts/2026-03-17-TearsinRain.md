@@ -1,6 +1,6 @@
 ---
 title: Tears in Rain - An original poem.
-date: 2026-03-17 13:05:00 -0500
+date: 2026-03-17 13:05:00
 categories: [poetry]
 tags: [poem, rain] # Tag names always lowercase.
 permalink: /tearsinrain/
