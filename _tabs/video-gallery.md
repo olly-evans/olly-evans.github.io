@@ -21,7 +21,7 @@ A summary of editing work I've done for other people and myself.
 
 ## Stats Perform  - <a href="https://www.statsperform.com/opta-content-agency/" target="_blank">Site</a> 
 
-Apologies as the captions bugged out on this Liverpool clip annoyingly, I believe it was because of a MOGRT I used later in the editing process.
+I sadly no longer have access to the Liverpool video to fix the subs, hopefully its not too distracting.
 <div class="video-gallery">
   <video controls>
     <source src="/assets/vids/SALAH_SOCIAL.mp4" type="video/mp4">
