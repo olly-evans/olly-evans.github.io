@@ -153,4 +153,44 @@ This is the result of the `get_legal_moves()` function for the `Bishop`. Shown a
     </div>
 </div>
 
-Yes I know the pawn is hanging this is just an example. In my next post I'll go over king checks and potentially how I've changed these `get_legal_moves` functions to accomodate for it, as I'd like to filter out illegal moves in there too. Thanks for reading!
+Yes I know the pawn is hanging this is just an example. In my next post I'll go over king checks and potentially how I've changed these `get_legal_moves` functions to accomodate for it, as I'd like to filter out illegal moves in there too.
+
+Here is the code for the `Queen` moves for those interested.
+
+```c++
+
+uint64_t Queen::get_legal_moves(uint64_t w_bb, uint64_t b_bb) {
+
+    uint64_t queen = (1ULL << this->bit);
+    uint64_t moves = 0ULL;
+
+    uint64_t north_moves = get_north_moves(queen, w_bb, b_bb);
+    uint64_t south_moves = get_south_moves(queen, w_bb, b_bb);
+    uint64_t west_moves = get_west_moves(queen, w_bb, b_bb);
+    uint64_t east_moves = get_east_moves(queen, w_bb, b_bb);
+
+    uint64_t north_west_moves = get_north_west_moves(queen, w_bb, b_bb);
+    uint64_t north_east_moves = get_north_east_moves(queen, w_bb, b_bb);
+    uint64_t south_west_moves = get_south_west_moves(queen, w_bb, b_bb);
+    uint64_t south_east_moves = get_south_east_moves(queen, w_bb, b_bb);
+
+    moves |= north_moves;
+    moves |= south_moves;
+    moves |= west_moves;
+    moves |= east_moves;
+
+    moves |= north_west_moves;
+    moves |= north_east_moves;
+    moves |= south_west_moves;
+    moves |= south_east_moves;
+
+    uint64_t enemy_occupancy = (this->color == Color::WHITE) ? b_bb : w_bb; 
+    this->captures = (moves & enemy_occupancy);
+    
+    moves = BBHelper::remove_friendly_pieces(moves, (this->color == Color::WHITE ? w_bb : b_bb)); 
+    return BBHelper::remove_enemy_pieces(moves, (this->color == Color::WHITE) ? b_bb : w_bb);
+};
+
+```
+
+Thanks for reading!
