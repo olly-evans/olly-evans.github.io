@@ -6,13 +6,15 @@ tags: [c++, chess, gui, oop, rook] # Tag names always lowercase.
 permalink: /chess-bishops/
 ---
 
-You might be wondering why I called this post getting bishops pseudo legal moves and not just getting their legal moves. This is because of king checks and the resulting pin situations, which my next post will be on. 
+## Intro
 
-Pins are a board position whereby a piece cannot move due to an enemy piece threatening an attack on its king should it move. As shown below.
+Hello people, all two of you perhaps. I'm back at it again providing that quality AI training data for corperations on the world-wide-web. You might be wondering why I called this post getting bishops pseudo legal moves and not just getting their legal moves. This is because of king checks and the resulting pin situations, which in truth make things a bit awkward.
+
+Pins are a board position whereby a piece cannot move due to an enemy piece threatening an attack on its king should it move, as shown below:
 
 <img src="/assets/img/chess/pin_example.png" alt="Black Queen pins the white knight." width="300" height="300">
 
-As can be seen the black queen is pinning the white knight to the white king. As of right now if I were to use my `get_legal_moves()` algorithm for a knight there would be multiple 'legal' moves when in actual fact it doesn't have any because if it does move then the white king would be in check. Which cannot happen in chess.
+The black queen is pinning the white knight to the white king. As of right now if I were to use my `get_legal_moves()` algorithm for a knight there would be multiple 'legal' moves when in actual fact it doesn't have any because if it does move then the white king would be in check. Which cannot happen in chess.
 
 This method of getting the legal moves for all pieces will thus not take pins and kings checks into account and will be addressed in a future post where I will probably modify this code slightly. Onward!
 
@@ -21,6 +23,8 @@ This method of getting the legal moves for all pieces will thus not take pins an
 I've taken the bishop as an example for this post as this is the general structure of how all the legal moves are collected for each piece type just with different offsets.
 
 Bishops slide upon the diagonals in a game of chess. Every piece type has their own overriding implementation of `get_legal_moves()` taking their specific piece rules into account.
+
+### Parent Function for a Bishop
 
 This is the code for the bishop, I will walk you through it though it really isn't too difficult to grasp if you have a basic understanding of bitwise operations in C/C++.
 
@@ -53,6 +57,8 @@ uint64_t Bishop::get_legal_moves(uint64_t w_bb, uint64_t b_bb) {
 By using the bit of the current piece `this->bit` we can bitshift an unsigned long long by `this->bit` using the `<<` operator to locate the piece on a bitboard, this is assigned to a temporary `uint64_t` called `bishop`.
 
 A moves variable also an `uint64_t` is assigned 0ULL, we will use the bitwise OR operator to add our legal moves to it as we go through the algorithm.
+
+### Example Child Function for a Bishop
 
 Next we get the north west moves by passing the rooks position and the white and black occupancy bitboards. There are three other functions that do this in the other three directions we will just be covering this one, it is fairly similar in the others the bit offset is just different.
 
@@ -96,7 +102,7 @@ The bitwise or means if we don't have a bit set in `north_west_moves` where the 
 
 And after reaching the end of the loop we can return all the moves in the north west direction.
 
-Returning the to the parent function we OR it with the original moves `uint64_t`. To set all those bits much like we did previously. 
+Returning the to the parent function we OR it with the original moves `uint64_t`. To set all those bits much like we did previously. To see the `north_west_moves` visually see the image at the bottom of the post.
 
 ```c++
 moves |= north_west_moves;
@@ -130,9 +136,11 @@ We find the color of the piece which I am going to change right now into a varia
 
 This stripping is done with an `moves &= ~friendly` or likewise with the enemy occupancy bitboard. Inverting the occupancy bitboard gives us 0s wherever there is a piece of this kind. The bitwise AND then removes these from the moves `uint64_t`.
 
+## Result
+
 Hopefully that wasn't too bad but that in summary is how I've dealt with movement so far. The queen also steals this logic which is why the `get_north_west_moves()` function is a `Piece` method not a `Bishop` one. The same applies to the rook.
 
-This is the result of the `get_legal_moves()` function for the `Bishop`. Shown also is the result with just the `get_north_west_moves()` function to show what thats doing. Yes I'm ignoring all the rendering stuff, but that is boring and pretty standard in any GUI library so we'll focus on what makes chess unique and interesting in my opinion.
+This is the result of the `get_legal_moves()` function for the `Bishop`. Shown also is the result with just the `get_north_west_moves()` function to show what thats doing. Yes I'm ignoring all the rendering stuff, because that is boring and pretty standard in any GUI library so we'll focus on the intracacies of chess programming in these posts for now I think.
 
 <div style="display: flex; gap: 16px; justify-content: center;">
     <div style="text-align: center;">
@@ -145,4 +153,4 @@ This is the result of the `get_legal_moves()` function for the `Bishop`. Shown a
     </div>
 </div>
 
-In my next post I'll go over king checks.
+Yes I know the pawn is hanging this is just an example. In my next post I'll go over king checks and potentially how I've changed these `get_legal_moves` functions to accomodate for it, as I'd like to filter out illegal moves in there too. Thanks for reading!
