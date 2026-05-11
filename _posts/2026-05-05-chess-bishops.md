@@ -54,7 +54,7 @@ uint64_t Bishop::get_legal_moves(uint64_t w_bb, uint64_t b_bb) {
 
 ```
 
-By using the bit of the current piece `this->bit` we can bitshift an unsigned long long by `this->bit` using the `<<` operator to locate the piece on a bitboard, this is assigned to a temporary `uint64_t` called `bishop`.
+By using the bit of the current piece `this->bit` we can bitshift an unsigned long long by `this->bit` using the `<<` operator to locate the piece on a bitboard, this is assigned to a temporary `uint64_t` called `bishop`. The `w_bb` and `b_bb` arguments are the occupancy bitboards for each color and are thus a bitwise OR of all the bitboards for each color.
 
 A moves variable also an `uint64_t` is assigned 0ULL, we will use the bitwise OR operator to add our legal moves to it as we go through the algorithm.
 
@@ -163,6 +163,7 @@ uint64_t Queen::get_legal_moves(uint64_t w_bb, uint64_t b_bb) {
 
     uint64_t queen = (1ULL << this->bit);
     uint64_t moves = 0ULL;
+
 
     uint64_t north_moves = get_north_moves(queen, w_bb, b_bb);
     uint64_t south_moves = get_south_moves(queen, w_bb, b_bb);
