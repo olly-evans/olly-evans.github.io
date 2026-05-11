@@ -245,6 +245,11 @@ void Board::handle_piece_move(uint8_t clicked_bit) {
 }
 ```
 
+The result of this is shown in the demo video below.
+
+<!-- ![](/assets/img/chess/lmb_demo.mp4)
+<video style="text-align: center;" src="/assets/img/chess/lmb_demo.mp4" width="300" height="300" LMB Video Demo></video> -->
+
 That is the end of this post, hopefully you learned something from that or found it vaguely interesting. Regardless thanks for reading, these posts will keep coming over the next few weeks as I continue.
 
 As of right now I only have `get_legal_moves()` for knights so the next order of business will be giving all of the other pieces some moves.
