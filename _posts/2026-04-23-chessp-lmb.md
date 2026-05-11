@@ -1,5 +1,5 @@
 ---
-title: Chess and Engine Programming Continued.
+title: Handling Left Mouse Presses
 date: 2026-04-20 13:05:00
 categories: [programming, chess, projects]
 tags: [c++, chess, gui, oop] # Tag names always lowercase.
