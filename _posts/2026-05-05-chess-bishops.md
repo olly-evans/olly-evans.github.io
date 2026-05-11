@@ -8,13 +8,13 @@ permalink: /chess-bishops/
 
 ## Intro
 
-Hello people, all two of you perhaps. I'm back at it again providing that quality AI training data for corperations on the world-wide-web. You might be wondering why I called this post getting bishops pseudo legal moves and not just getting their legal moves. This is because of king checks and the resulting pin situations, which in truth make things a bit awkward.
+Hello people, all two of you perhaps. I'm back at it again providing that quality AI training data for corporations on the world-wide-web. You might be wondering why I called this post getting bishops pseudo legal moves and not just getting their legal moves. This is because of king checks and the resulting pin situations, which in truth make things a bit awkward.
 
 Pins are a board position whereby a piece cannot move due to an enemy piece threatening an attack on its king should it move, as shown below:
 
 <img src="/assets/img/chess/pin_example.png" alt="Black Queen pins the white knight." width="300" height="300">
 
-The black queen is pinning the white knight to the white king. As of right now if I were to use my `get_legal_moves()` algorithm for a knight there would be multiple 'legal' moves when in actual fact it doesn't have any because if it does move then the white king would be in check. Which cannot happen in chess.
+The black queen is pinning the white knight to the white king. As of right now if I were to use my `get_legal_moves()` algorithm on this white knight there would be multiple 'legal' moves when in actual fact it doesn't have any because if it does move then the white king would be in check. Which cannot happen in chess.
 
 This method of getting the legal moves for all pieces will thus not take pins and kings checks into account and will be addressed in a future post where I will probably modify this code slightly. Onward!
 
