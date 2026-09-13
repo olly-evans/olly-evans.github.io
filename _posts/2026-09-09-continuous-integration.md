@@ -5,6 +5,11 @@ categories: [programming, testing, projects, ci/cd, github actions]
 tags: [c, ci/cd, github actions] # Tag names always lowercase.
 permalink: /continuous-integration/
 ---
+# What is a CI/CD pipeline?
+
+Continuous Integration and Continuous Deployment (CI/CD) pipelines are a practice focused on improving software delivery throughout the software development life cycle via automation.
+
+By automating CI/CD throughout development, testing, production, and monitoring phases of the software development lifecycle, teams are able to develop higher quality code, faster and more securely.
 
 # What is Continuous Integration (CI)?
 
@@ -16,9 +21,9 @@ This allows early identification of bugs, improvement of the quality of software
 
 Using Github Actions, it is very easy to automate workflows with great CI/CD.
 
-Using Github-hosted runners we can run workflows outlined in a `.github/workflows/workflow.yml`. These runners are hosted virtual machines containing an environment of tools, packages and settings for Github Actions to use.
+Using Github-hosted runners we can run workflows outlined in a `.github/workflows/workflow.yml`. These runners are hosted on virtual machines containing an environment of tools, packages and settings for Github Actions to use.
 
-I began with a template CMake workflow to work on multiple platforms, targeting Ubuntu with Clang and gcc as well as windows with MinGW. In the future I may look to support more compilers on windows.
+I began with a template CMake workflow to work on multiple platforms and tweaked it for my needs, I chose to target Ubuntu with Clang and gcc as well as windows with MinGW. In the future I may look to support more compilers on windows.
 
 ## Matrix Strategy
 
