@@ -1,6 +1,6 @@
 ---
 title: Using CI/CD pipelines in my Pathfinding Project
-date: 2026-09-11 16:05:00
+date: 2026-09-09 16:05:00
 categories: [programming, testing, projects, ci/cd, github actions]
 tags: [c, ci/cd, github actions] # Tag names always lowercase.
 permalink: /continuous-integration/
